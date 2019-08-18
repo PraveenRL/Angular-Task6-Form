@@ -1,0 +1,63 @@
+<div id="div1" class="m-0">
+    <h2 class="py-5 text-center font-italic">STUDENTS DETAILS</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-3"></div>
+            <form class="col-lg-4 col-md-6" [formGroup]='userForm' (ngSubmit)='onSubmit()'>
+                <label class="text-white" >Name</label>
+                <input class="form-control" placeholder="Name" formControlName="Name">
+                <div *ngIf="f.Name.invalid && (f.Name.dirty || f.Name.touched)" class="alert alert-danger">
+                    <div *ngIf='f.Name.errors.required'>
+                        <small>Name is required.!</small>
+                    </div>
+                </div>
+
+                <label class="text-white mt-2">Email</label>
+                <input class="form-control" placeholder="Email" formControlName = 'Email'>
+                <div *ngIf="f.Email.invalid && (f.Email.dirty || f.Email.touched)" class="alert alert-danger">
+                    <div *ngIf='f.Email.errors.required'>
+                        <small>Email is required.!</small>
+                    </div>
+                    <div *ngIf='f.Email.errors.email'>
+                        <small>Improper Email.!</small>
+                    </div>
+                </div>
+
+                <label class="text-white mt-2">Gender</label>
+                <select class="form-control" placeholder="Select" formControlName = 'Gender'>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+                <div *ngIf="f.Gender.invalid && (f.Gender.dirty || f.Gender.touched)" class="alert alert-danger">
+                    <div *ngIf='f.Gender.errors.required'>
+                        <small>Select your gender.!</small>
+                    </div>
+                </div>
+                
+                <label class="text-white mt-2">Age</label>
+                <input class="form-control" placeholder="Age" type="number" formControlName = 'Age'>
+                <div *ngIf="f.Age.invalid && (f.Age.dirty || f.Age.touched)" class="alert alert-danger">
+                    <div *ngIf='f.Age.errors.required'>
+                        <small>Age is required.!</small>
+                    </div>
+                </div>
+
+                <label class="text-white mt-2">Aadhar No :</label>
+                <input class="form-control" placeholder="Aadhar No" formControlName = 'Aadhar'>
+                <div *ngIf="f.Aadhar.invalid && (f.Aadhar.dirty || f.Aadhar.touched)" class="alert alert-danger">
+                    <div *ngIf='f.Aadhar.errors.required'>
+                        <small>Enter your Aadhar No.!</small>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary my-3" type="submit">Submit</button>
+                </div>
+                
+                
+            </form>
+            <div class="col-lg-4 col-md-3"></div>
+        </div>
+    </div>
+</div>

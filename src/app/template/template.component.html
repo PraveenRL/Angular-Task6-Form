@@ -1,0 +1,36 @@
+<div id="div1" class="m-0">
+    <h2 class="py-5 text-center font-italic">STUDENTS DETAILS</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-3"></div>
+            <form class="col-lg-4 col-md-6" (ngSubmit)='add(contactForm.value)' name="contactForm" #contactForm="ngForm">
+                <label class="text-white" >Name</label>
+                <input class="form-control" placeholder="Name" ngModel #name='ngModel' name="name">
+                <label class="text-white mt-2">Email</label>
+                <input class="form-control" placeholder="Email" ngModel #name='ngModel' name='email'>
+                <label class="text-white mt-2">Gender</label>
+                <select class="form-control" placeholder="Select" ngModel #name='ngModel' name='gender'>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+                <label class="text-white mt-2">Age</label>
+                <input class="form-control" placeholder="Age" type="number" ngModel #name='ngModel' name='age'>
+                <label class="text-white mt-2">Aadhar No :</label>
+                <input class="form-control" placeholder="Aadhar No" ngModel #name='ngModel' name='aadhar'>
+                <div class="text-center">
+                    <button class="btn btn-primary my-3">Submit</button>
+                </div>
+                <div class="bg-warning text-center">
+                    <p>{{data.name}}</p>
+                    <p>{{data.email}}</p>
+                    <p>{{data.gender}}</p>
+                    <p>{{data.age}}</p>
+                    <p>{{data.aadhar}}</p>
+                    
+                </div>
+            </form>
+            <div class="col-lg-4 col-md-3"></div>
+        </div>
+    </div>
+</div>
